@@ -50,12 +50,6 @@ module TeleNotify
       response[:ok]
     end
 
-    def send_message_to(text, name)
-      response = JSON.parse(RestClient.post(@@url + "sendMessage", chat_id: name, text: text), { symbolize_names: true })
-      response[:ok]
-    end
-
-
   end
 
 end
