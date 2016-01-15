@@ -8,9 +8,7 @@ module TeleNotify
           user = TelegramUser.create( { telegram_id: params[:message][:from][:id], first_name: params[:message][:from][:first_name], username: params[:message][:from][:username] } )
 
           if user
-            name = params[:message][:from][:username].to_s
-
-            print name.length.to_s + "Debugger"
+            name = user.username.to_s
 
             if name.length > 0
               user.send_message("Enhorabuena tus notificaciones estan activadas.")
